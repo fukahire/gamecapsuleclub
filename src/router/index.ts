@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
-  // {
-  //   path: "/:pathMatch(.*)*",
-  //   redirect: "/404",
-  // },
-  // {
-  //   path: "/404",
-  //   component: () => import("../pages/404.vue"),
-  // },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
+  },
+  {
+    path: "/404",
+    component: () => import("../pages/404.vue"),
+  },
   {
     path: "/",
     name: "info",
@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/gamecapsuleclub/'),
   routes,
 });
 
