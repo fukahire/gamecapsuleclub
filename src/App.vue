@@ -5,6 +5,8 @@
 
 <template>
   <div>
+    <!-- <div class="text-green-500">App.vue loaded</div> -->
+
     <!-- <info/> -->
     <router-view />
   </div>
