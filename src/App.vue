@@ -5,7 +5,7 @@ import info from './pages/info.vue'
 
 <template>
   <div>
-    <info/>
-    <!-- <router-view /> -->
+    <!-- <info/> -->
+    <router-view />
   </div>
 </template>
