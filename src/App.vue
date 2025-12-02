@@ -7,7 +7,7 @@
   <div>
     <!-- <div class="text-green-500">App.vue loaded</div> -->
 
-    <!-- <info/> -->
+    <div></div>
     <router-view />
   </div>
 </template>
