@@ -5,7 +5,7 @@
 
 <template>
   <div>
-    <!-- <info/> -->
-    <router-view />
+    <info/>
+    <!-- <router-view /> -->
   </div>
 </template>
