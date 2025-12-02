@@ -19,22 +19,22 @@
             </div>
         </div>
         <div class="flex flex-col gap-2 justify-center items-center mt-12">
-            <a href="https://forms.gle/DSy3WNjpDFzNKa3Z8" class="bg-[#30507a] hover:bg-[#e5ad55] border-3 rounded-full py-2 font-bold text-white border-white w-80 block">活動參與意願調查</a>
-            <a href="https://starstonetw.weebly.com/" class="bg-[#30507a] hover:bg-[#e5ad55] border-3 rounded-full py-2 font-bold text-white border-white w-80 block">NiCE 創·迴響2相關資訊</a>
+            <a href="https://forms.gle/DSy3WNjpDFzNKa3Z8" class="bg-[#30507a] hover:bg-[#e5ad55] border-3 rounded-full py-2 font-bold text-white border-white w-80 block" target="_blank">活動參與意願調查</a>
+            <a href="https://starstonetw.weebly.com/" class="bg-[#30507a] hover:bg-[#e5ad55] border-3 rounded-full py-2 font-bold text-white border-white w-80 block" target="_blank">NiCE 創·迴響2相關資訊</a>
         </div>
         <div class="w-full flex justify-center items-center">
             <div class="flex gap-2 justify-items-center justify-center items-center mt-12 flex-wrap">
-                <img src="../assets/sprite/dante.png" alt="" class="block h-20 md:h-32">
-                <img src="../assets/sprite/felyne.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/leon.png" alt="" class="block h-20 md:h-32">
+                <img src="../assets/sprite/felyne.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/luke.png" alt="" class="block h-20 md:h-32">
+                <img src="../assets/sprite/netto.png" alt="" class="block h-20 md:h-32">
+                <img src="../assets/sprite/vergil.png" alt="" class="block h-20 md:h-32">
+                <img src="../assets/sprite/dante.png" alt="" class="block h-20 md:h-32">
+                <img src="../assets/sprite/nero.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/naruhodo.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/mitsurugi.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/odoroki.png" alt="" class="block h-20 md:h-32">
                 <img src="../assets/sprite/naruhodo_acient.png" alt="" class="block h-20 md:h-32">
-                <img src="../assets/sprite/nero.png" alt="" class="block h-20 md:h-32">
-                <img src="../assets/sprite/netto.png" alt="" class="block h-20 md:h-32">
-                <img src="../assets/sprite/vergil.png" alt="" class="block h-20 md:h-32">
             </div>
         </div>
     </div>
