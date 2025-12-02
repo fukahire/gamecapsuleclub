@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/gamecapsuleclub/"),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
