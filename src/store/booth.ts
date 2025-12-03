@@ -4,7 +4,7 @@ export const useBooth = defineStore('booth', {
     state: () => ({
         boothList: [
             {
-                img: 'booth/boothimg_sprite.png',
+                img: new URL('@/assets/booth/boothimg_sprite.png', import.meta.url).href,
                 boothNum: 'B01',
                 boothName: '大會攤',
                 boothCount: 2,
@@ -15,7 +15,7 @@ export const useBooth = defineStore('booth', {
                 event: 1,
             },
             {
-                img: 'booth/boothimg_sprite.png',
+                img: new URL('@/assets/booth/boothimg_sprite.png', import.meta.url).href,
                 boothNum: 'B03',
                 boothName: '軟體鬧鐘',
                 boothCount: 1,
@@ -26,7 +26,7 @@ export const useBooth = defineStore('booth', {
                 event: 2,
             },
             {
-                img: 'booth/boothimg_sprite.png',
+                img: new URL('@/assets/booth/boothimg_sprite.png', import.meta.url).href,
                 boothNum: 'B04',
                 boothName: '逆轉裁判',
                 boothCount: 1,
