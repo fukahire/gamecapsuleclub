@@ -1,10 +1,3 @@
-<script setup lang="ts">
-// import { ref } from 'vue'
-
-// defineProps<{ msg: string }>()
-
-</script>
-
 <template>
     <div class="pt-20 md:pt-0 mb-30">
         <div class="mx-auto w-full max-w-[800px] font-bold">
