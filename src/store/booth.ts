@@ -16,7 +16,7 @@ export const useBooth = defineStore('booth', {
             },
             {
                 img: new URL('@/assets/booth/boothimg_sprite.png', import.meta.url).href,
-                boothNum: 'B03',
+                boothNum: 'B04',
                 boothName: '軟體鬧鐘',
                 boothCount: 1,
                 author: '魚翅',
@@ -27,7 +27,7 @@ export const useBooth = defineStore('booth', {
             },
             {
                 img: new URL('@/assets/booth/boothimg_sprite.png', import.meta.url).href,
-                boothNum: 'B04',
+                boothNum: 'B03',
                 boothName: '逆轉裁判',
                 boothCount: 1,
                 author: '眼蟲',
