@@ -81,6 +81,59 @@ return e})
     return arrAlphabet
 })
 
+import { ref } from 'vue';
+const scale = ref(1)
+const moved = ref(false)
+
+const pos = ref({ x: 0, y: 0 })
+
+// 拖曳狀態
+const dragging = ref(false)
+const last = ref({ x: 0, y: 0 })
+
+// 滾輪縮放
+function onWheel(e: WheelEvent) {
+  const delta = e.deltaY > 0 ? -0.1 : 0.1
+  scale.value = Math.min(3, Math.max(0.5, scale.value + delta))
+}
+
+// 開始拖曳
+function startDrag(e: MouseEvent) {
+    console.log('hi')
+  dragging.value = true
+    moved.value = false
+  last.value = { x: e.clientX, y: e.clientY }
+}
+
+// 拖曳中
+function onDrag(e: MouseEvent) {
+  if (!dragging.value) return
+
+  const dx = e.clientX - last.value.x
+  const dy = e.clientY - last.value.y
+
+  if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
+    moved.value = true
+  }
+
+  pos.value.x += dx
+  pos.value.y += dy
+
+  last.value = { x: e.clientX, y: e.clientY }
+
+}
+
+// 結束拖曳
+function endDrag() {
+  dragging.value = false
+}
+
+// 復原
+function reset() {
+  scale.value = 1
+  pos.value = { x: 0, y: 0 }
+}
+
 </script>
 
 <template>
@@ -92,12 +145,28 @@ return e})
                 <div class="w-4 h-4 border-2 bg-amber-400 rounded-full"></div>
                 <p class="font-bold">活動集點攤</p>
             </div>
+            <div class="bg-[#30507a] p-1 px-2 rounded-xl font-bold text-white ml-2 cursor-pointer" @click="reset">復原</div>
         </div>
-        <div class="grid grid-cols-12">
-            <boothIndie v-for="(item,index) in boothResize" :class="`${ item.boothCount == 12 ? `col-span-12` : ``}`" :key="index" :booth="item"></boothIndie>
+        <!-- 外框 -->
+        <div class="w-4/5 h-full overflow-hidden bg-gray-600/30 mx-auto"
+        
+                    @wheel.prevent="onWheel"
+                    @mousedown="startDrag"
+                    @mousemove="onDrag"
+                    @mouseup="endDrag"
+                    @mouseleave="endDrag">
+            <!-- 內框 -->
+                <div
+                    :style="{transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale})`}"
+                    class="grid grid-cols-12 drag-item w-full min-w-[1200px]">
+                    <boothIndie v-for="(item,index) in boothResize" :class="`${ item.boothCount == 12 ? `col-span-12` : ``}`" :moved="moved" :key="index" :booth="item"></boothIndie>
+                </div>
         </div>
     </div>
 </template>
 
 <style scoped>
+.drag-item{
+    user-select: none;
+}
 </style>
