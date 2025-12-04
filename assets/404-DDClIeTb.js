@@ -1,0 +1,1 @@
+import{d as e,c as t,o,_ as s}from"./index-BGPP3rdc.js";const _={class:"pt-20 md:pt-0 mb-20 2xl:mb-0"},a=e({__name:"404",setup(c){return(n,p)=>(o(),t("div",_," 404 "))}}),r=s(a,[["__scopeId","data-v-edfd117a"]]);export{r as default};
