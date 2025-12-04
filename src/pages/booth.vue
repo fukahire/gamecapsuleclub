@@ -99,7 +99,6 @@ function onWheel(e: WheelEvent) {
 
 // 開始拖曳
 function startDrag(e: MouseEvent) {
-    console.log('hi')
   dragging.value = true
     moved.value = false
   last.value = { x: e.clientX, y: e.clientY }
