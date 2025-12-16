@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useBooth } from '../store/booth';
 import boothIndie from '../components/boothIndie.vue';
+import boothIndieMobile from '../components/boothIndieMobile.vue';
 import { computed } from 'vue';
 
 const booth = useBooth().boothList
@@ -82,6 +83,7 @@ return e})
 })
 
 import { ref } from 'vue';
+const selectedBooth = ref('')
 const scale = ref(1)
 const moved = ref(false)
 
@@ -136,31 +138,39 @@ function reset() {
 </script>
 
 <template>
-    <div class="pt-20 md:pt-0 mb-30">
-        <p class="text-3xl font-black text-[#30507a] mb-2">活動攤位圖</p>
-        <!-- content -->
-        <div class="mt-4 mb-6 flex justify-center">
-            <div class="flex gap-1 items-center">
-                <div class="w-4 h-4 border-2 bg-amber-400 rounded-full"></div>
-                <p class="font-bold">活動集點攤</p>
-            </div>
-            <div class="bg-[#30507a] p-1 px-2 rounded-xl font-bold text-white ml-2 cursor-pointer" @click="reset">復原</div>
-        </div>
-        <!-- 外框 -->
-        <div class="w-4/5 h-full overflow-hidden bg-gray-600/30 mx-auto"
-        
-                    @wheel.prevent="onWheel"
-                    @mousedown="startDrag"
-                    @mousemove="onDrag"
-                    @mouseup="endDrag"
-                    @mouseleave="endDrag">
-            <!-- 內框 -->
-                <div
-                    :style="{transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale})`}"
-                    class="grid grid-cols-12 drag-item w-full min-w-[1200px]">
-                    <boothIndie v-for="(item,index) in boothResize" :class="`${ item.boothCount == 12 ? `col-span-12` : ``}`" :moved="moved" :key="index" :booth="item"></boothIndie>
+    <div class="pt-10 md:pt-0 mb-30">
+        <div class="hidden md:block">
+            <p class="text-3xl font-black text-[#30507a] mb-2 drag-item">活動攤位圖</p>
+            <!-- content -->
+            <div class="mt-4 mb-6 flex justify-center">
+                <div class="flex gap-1 items-center">
+                    <div class="w-4 h-4 border-2 bg-amber-400 rounded-full"></div>
+                    <p class="font-bold drag-item">活動集點攤</p>
                 </div>
+                <div class="bg-[#30507a] p-1 px-2 rounded-xl font-bold text-white ml-2 cursor-pointer drag-item" @click="reset">復原</div>
+            </div>
+            <!-- 外框 -->
+            <div class="w-4/5 h-full overflow-hidden bg-gray-600/30 mx-auto"
+                        @wheel.prevent="onWheel"
+                        @mousedown="startDrag"
+                        @mousemove="onDrag"
+                        @mouseup="endDrag"
+                        @mouseleave="endDrag">
+                <!-- 內框 -->
+                    <div
+                        :style="{transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale})`}"
+                        class="grid grid-cols-12 drag-item w-full min-w-[1200px]">
+                        <boothIndie v-for="(item,index) in boothResize" :class="`${ item.boothCount == 12 ? `col-span-12` : ``}`" :moved="moved" :key="index" :booth="item"></boothIndie>
+                    </div>
+            </div>
         </div>
+        <div class="block md:hidden min-h-screen">
+            <p class="text-3xl font-black text-[#30507a] mb-2 drag-item">活動攤位圖 {{ selectedBooth }}</p>
+            <div class="grid grid-cols-2 gap-y-1">
+                <boothIndieMobile v-for="(item,index) in boothResize" :key="`${item.boothNum}${index}`" :booth="item" @click="selectedBooth = item.boothNum" :selected="selectedBooth == item.boothNum" @close="selectedBooth = ''"></boothIndieMobile>
+            </div>
+        </div>
+        
     </div>
 </template>
 

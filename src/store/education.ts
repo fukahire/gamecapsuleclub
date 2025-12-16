@@ -4,7 +4,7 @@ export const useEducation = defineStore('education', {
     state: () => ({
         station: [
             {
-                img: 'education/example.png',
+                img: 'education/hikari.png',
                 sprite: 'sprite/netto.png',
                 name: '光熱斗&洛克人.exe',
                 position: '電腦老師',
