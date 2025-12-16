@@ -7,7 +7,7 @@ $ ssh -i $SSH_PRIVATE_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no \ $S
 Permission denied, please try again.
  user@1xx.xxx.x.xxx: Permission denied (publickey,password).
 
-1. 這個時候應該先找到前前端的虛擬機
+## 1. 這個時候應該先找到前前端的虛擬機
 新進員工絕對要問舊員工，盡可以拿到可以拿到的資料。舊員工什麼都給不出來就GG
 雖然有Shell、Bash等環境差異，但 Git CMD 就可以完成全部流程的樣子
 
@@ -16,12 +16,12 @@ ssh user@1xx.xxx.x.xxx / password
 
 竟然還會有時登得上有時登不上
 
-2.成功登入的自連測試
+## 2.成功登入的自連測試
 ssh -i gitlab_ci_key user@localhost
 如果需要輸入密碼就是gitlab私鑰跟公鑰沒對起來
 pipeline也是因為公私鑰沒對，ssh就會額外再向gitlab要密碼，得不到導致 Permission denied
 
-3.產生鑰匙
+## 3.產生鑰匙
 指令：
 ssh-keygen -t ed25519 -C "gitlab-ci" -f gitlab_ci_key
 ．會顯示key fingerprint & key's randomart image(但我不知道這是幹嘛用的)
