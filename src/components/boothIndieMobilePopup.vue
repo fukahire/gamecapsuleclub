@@ -28,7 +28,7 @@ type booth = {
                     <div class="text-base font-bold grow">
                         <p class="text-left">{{ `攤位：${booth.boothName}` }}</p>
                         <p class="text-left">{{ `作者：${booth.author}` }}</p>
-                        <p v-if="booth.event>0" class="text-left">{{ `活動攤：${booth.event}號活動` }}</p>
+                        <p v-if="booth.event>0" class="text-left">{{ `${booth.event}號活動攤` }}</p>
                     </div>
                     <div class="w-8 h-8 text-white bg-[#30507a] rounded-full flex items-center justify-center self-end cursor-pointer" @click.prevents="$emit('close')">X</div>
                 </div>
