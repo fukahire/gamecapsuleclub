@@ -15,13 +15,13 @@
                 link:'/character'
             },
             {
-                title: '相關問題',
+                title: '常見問題',
                 link:'/qa'
             },
-            {
-                title: '我要報名',
-                link:'https://forms.gle/hwsKafDRvcxuZNa2A'
-            },
+            // {
+            //     title: '我要報名',
+            //     link:'https://forms.gle/hwsKafDRvcxuZNa2A'
+            // },
         ],)
 </script>
 

@@ -213,11 +213,11 @@ function reset() {
 </script>
 
 <template>
-    <div class="pt-10 md:pt-0 mb-30">
+    <div>
         <div class="hidden md:block">
-            <p class="text-3xl font-black text-[#30507a] mb-2 drag-item">活動攤位圖</p>
+            <p class="text-3xl font-black text-[#30507a] drag-item">活動攤位圖</p>
             <!-- content -->
-            <div class="mt-4 mb-6 flex justify-center">
+            <div class="mt-2 mb-4 flex justify-center">
                 <div class="flex gap-1 items-center">
                     <div class="w-4 h-4 border-2 bg-amber-400 rounded-full"></div>
                     <p class="font-bold drag-item">活動集點攤</p>

@@ -22,9 +22,9 @@ defineProps<{ info: Info,
     <!-- 單張卡片 -->
      <div class="flex flex-col md:grid md:grid-cols-2 gap-4 items-center" v-if="positionIndex === info.index">
         <div class="flex justify-center items-center"><img class="w-full max-w-[500px]" alt="" :src="info.img"></div>
-        <div class="flex flex-col justify-start gap-2 text-left">
+        <div class="flex flex-col justify-start gap-0.5 text-left">
             <p></p>
-            <div class="flex items-center gap-2 mb-4">
+            <div class="flex items-center gap-2 mb-1">
                 <!-- 角色縮圖 -->
                 <div><img class="w-8 mr-2" :src="info.sprite" alt=""></div>
                 <!-- 角色名 -->
@@ -36,7 +36,7 @@ defineProps<{ info: Info,
             <!-- 介紹 -->
             <div class="pl-2 max-w-[450px] font-bold text-base md:text-lg">{{ info.description }}</div>
             <!-- 出場作品 -->
-            <p class="pl-2 mt-8 font-bold">{{ `出場作品：《${info.origin}》` }}</p>
+            <p class="pl-2 mt-5 font-bold">{{ `出場作品：《${info.origin}》` }}</p>
         </div>
      </div>
 </template>

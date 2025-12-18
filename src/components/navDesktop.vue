@@ -14,20 +14,30 @@
                 link:'/character'
             },
             {
-                title: '相關問題',
+                title: '常見問題',
                 link:'/qa'
             },
-            {
-                title: '我要報名',
-                link:'https://forms.gle/hwsKafDRvcxuZNa2A'
-            },
+            // {
+            //     title: '我要報名',
+            //     link:'https://forms.gle/hwsKafDRvcxuZNa2A'
+            // },
         ],)
 </script>
 
 <template>
-    <div>
-        <!-- 標題 -->
-        <!-- <NuxtLink to="/picnic">About page</NuxtLink> -->
+    <div class="flex-row justify-between px-4">
+        <div>test</div>
+        <div class="flex gap-8">
+            <router-link v-for="nav in navlink" :to="nav.link">{{ nav.title }}</router-link>
+        </div>
     </div>
 </template>
 
+<style scoped>
+    a{
+        text-decoration: none;
+        color: #30507a;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+</style>
