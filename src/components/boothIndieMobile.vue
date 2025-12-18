@@ -2,6 +2,8 @@
 <script setup lang="ts">
 
 const props = defineProps<{ booth: booth,}>()
+const booth = props.booth
+
 type booth = {
     img: string,
     boothNum: string,
