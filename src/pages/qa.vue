@@ -1,9 +1,7 @@
 <template>
-    <div class="pt-20 md:pt-0 mb-30">
-        <div class="mx-auto w-full max-w-[800px] font-bold">
-            <div>
-                <p class="text-3xl font-black text-[#30507a] mb-12">常見問題</p>
-            </div>
+    <div>
+        <div class="mx-auto w-full max-w-[800px] font-bold  pt-10">
+            <p class="text-2xl md:text-3xl font-black text-[#30507a] mb-2">常見問題</p>
             <div class="text-left">
                 <div class="mb-6">
                     <p class="text-[#30507a] font-bold">Q：報名場內O社團有什麼條件呢？</p>
@@ -27,7 +25,7 @@
                     <p class="text-[#30507a] font-bold">Q：遊戲膠囊康輔社活動有規劃了嗎？</p>
                     <p>A：目前仍在規劃中，確定後會統一公布。</p>
                 </div>
-                
+                <div class="h-20 w-full"></div>
             </div>
         </div>
         

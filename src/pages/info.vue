@@ -7,8 +7,8 @@
 
 <template>
     <!-- 社團攤位圖 -->
-    <div class="pt-20 md:pt-0 mb-20 2xl:mb-0">
-        <div class="text-lg font-bold">
+    <div>
+        <div>
             <p class="text-3xl font-black text-[#30507a] mb-2">遊戲膠囊康輔社</p>
             <p>「NiCE創·迴響」遊戲主題場內Only</p>
             <p>2026.08.15（六）</p>

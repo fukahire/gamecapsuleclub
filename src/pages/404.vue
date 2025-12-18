@@ -7,7 +7,7 @@
 
 <template>
     <!-- 社團攤位圖 -->
-    <div class="pt-20 md:pt-0 mb-20 2xl:mb-0">
+    <div class="mb-20 2xl:mb-0">
         404
     </div>
 </template>
