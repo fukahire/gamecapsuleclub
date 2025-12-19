@@ -7,7 +7,8 @@
     <title>遊戲膠囊康輔社</title>
   </head>
   <body class="overflow-y-scroll">
-    <div class="fixed inset-0 -z-10 bg-[url('./assets/capcombg.jpg')] bg-top bg-cover bg-no-repeat"></div>
+    <!-- <div class="fixed inset-0 -z-10 bg-[url('./assets/capcombg.jpg')] bg-top bg-cover bg-no-repeat"></div> -->
+    <img id="bg" src="./assets/capcombg.jpg" alt="">
     <div id="app"></div>
     <div class="w-full flex bg-[#7e8288] py-2.5 justify-center items-center fixed bottom-0 left-0">
       <div class="text-xs text-black flex flex-col md:flex-row gap-0.5 md:gap-4">
@@ -20,6 +21,12 @@
 </html>
 
 <script type="text/javascript">
+  const bg = document.getElementById('bg');
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  bg.style.width = vw + 'px';
+  bg.style.height = vh + 'px';
 // MIT License
 // https://github.com/rafgraph/spa-github-pages
 // This script checks to see if a redirect is present in the query string,
@@ -40,3 +47,18 @@
     }
 }(window.location))
 </script>
+
+<style>
+  #bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  pointer-events: none;
+}
+</style>
