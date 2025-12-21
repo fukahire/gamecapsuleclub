@@ -25,6 +25,10 @@
                     <p class="text-[#30507a] font-bold">Q：遊戲膠囊康輔社活動有規劃了嗎？</p>
                     <p>A：目前仍在規劃中，確定後會統一公布。</p>
                 </div>
+                <div class="mb-6">
+                    <p class="text-[#30507a] font-bold">Q：活動的籌辦人員是誰呢？</p>
+                    <p class="mb-2">A：米若、眼蟲、阿綠、麵包、阿祈、aya、魚翅。</p>
+                </div>
                 <div class="h-20 w-full"></div>
             </div>
         </div>
