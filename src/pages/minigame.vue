@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { ref,reactive,computed,watch } from 'vue'
+    import { ref,reactive,computed } from 'vue'
     // 按鈕元件
     import minigameBtn from '../components/minigameBtn.vue'
     const testNum = ref(0)
