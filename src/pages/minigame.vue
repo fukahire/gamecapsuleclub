@@ -6,17 +6,21 @@
     // 題目位置，要寫題目產生器
     const questList = reactive([
         {
-            'hint':'請問洛克人的英文怎麼拼呢！',
+            'hint':'洛克人英文怎麼拼',
             'letter':'ROCKMAN',
             'mapimg':['0', '0', '0', '0', '1', '2', '3', '0', '0', '0', '4', '5', '0', '0', '7', '6'],
         },{
-            'hint':'請問學園風的洛克人EXE是什麼型態呢！',
+            'hint':'學園風的洛克人exe是什麼型態',
             'letter':'NUMBERSOUL',
             'mapimg':['0','0','0','1','0','5','4','3','2','0','6','7','0','0','0','0','8','0','0','0','0','9','10','0','0'],
         },{
-            'hint':'請問可以改變洛克人EXE0.001%基因資料的修正檔是什麼！',
+            'hint':'可以改變洛克人exe 0.001%基因資料的修正檔是什麼',
             'letter':'SAITOBAT',
             'mapimg':['0','0','0','0','8','3','2','1','7','4','0','0','6','5','0','0'],
+        },{
+            'hint':'熱斗跟洛克人exe意識完全重合、操作沒有時間差的狀態是什麼',
+            'letter':'FULLSYNCHRO',
+            'mapimg':['0','0','8','9','0','0','6','7','10','11','0','5','4','0','0','1','2','3','0','0','0','0','0','0','0'],
         },
     ])
     // 題目
@@ -95,7 +99,7 @@
     <div class="flex flex-col justify-center items-center">
         <p class="font-bold mb-10 py-4 px-6 ring-[#e5ad55] ring-4 rounded-lg bg-white">{{ hint }}</p>
         <p @click="changeQuestion()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer mb-2 font-bold">換題目</p>
-        <div :class="`grid gap-1 ${cubeNumber} w-full`">
+        <div :class="`grid gap-1 ${cubeNumber} w-full max-w-[40rem]`">
             <minigameBtn :info="block" :gamestatus="gameStatus" v-for="(block,index) in Qarr" :key="`${block}${index}`" @tab="check"/>
         </div>
         <p class="mt-10 font-bold text-lg">{{ checkString }}</p>
