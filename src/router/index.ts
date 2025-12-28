@@ -28,6 +28,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "booth",
     component: () => import("../pages/booth.vue"),
   },
+  {
+    path: "/minigame",
+    name: "minigame",
+    component: () => import("../pages/minigame.vue"),
+  },
 ];
 
 const router = createRouter({
