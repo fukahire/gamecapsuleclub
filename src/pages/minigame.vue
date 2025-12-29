@@ -2,6 +2,7 @@
     import { ref,reactive,computed } from 'vue'
     // 按鈕元件
     import minigameBtn from '../components/minigameBtn.vue'
+    // 目前題目編號
     const testNum = ref(0)
     // 題目位置，要寫題目產生器
     const questList = reactive([
@@ -24,14 +25,8 @@
         },
     ])
     // 題目
-    const hint = computed(()=>{
-        return questList[testNum.value].hint
-    })
-    const question = computed(()=>{
-        return questList[testNum.value].letter
-    })
-    const mapimage = computed(()=>{
-        return questList[testNum.value].mapimg
+    const currentQuest = computed(()=>{
+        return questList[testNum.value]
     })
 
     // 所有英文字母 
@@ -42,21 +37,33 @@
     let checkString = ref('')
 
     // 題目產生器，置入字母
-    const Qarr = computed(()=>{
-        let arr = []
-        for(let i = 0; i< mapimage.value.length; i++){
-        // 非答案位置的話隨機填入字母
-        if(mapimage.value[i] === '0'){
-            arr.push(abc.value[Math.floor(Math.random() * 26)])
-        }else{
-            // 填入答案字母
-            let a = Number(mapimage.value[i]) -1
-            arr.push(question.value[a])
+    const Qarr = ref<{ letter: string; active: boolean }[]>([])
+    const generateQarr = () => {
+    let arr = []
+    for (let i = 0; i < currentQuest.value.mapimg.length; i++) {
+        if (currentQuest.value.mapimg[i] === '0') {
+            let cubeSpace = {
+                'letter': abc.value[Math.floor(Math.random() * 26)],
+                'active': false
+            }
+        arr.push(cubeSpace)
+        } else {
+            let a = Number(currentQuest.value.mapimg[i]) - 1
+            let cubeSpace = {
+                'letter': currentQuest.value.letter[a],
+                'active': false
+            }
+        
+        arr.push(cubeSpace)
         }
     }
-    return arr
-    })
+      Qarr.value = arr
+    }
 
+    // 初始化
+    generateQarr()
+
+    // 紀錄狀態 要不要加xy
     // 玩家答案
     const answer = reactive([])
     // 檢查答案
@@ -66,13 +73,13 @@
         checkString.value = answer.join('')
         // 檢查
         for(let i = 0; i< checkString.value.length; i++){
-            if(checkString.value[i] !== question.value[i]){
+            if(checkString.value[i] !== currentQuest.value.letter[i]){
                 checkString.value = '答錯嚕!請重新來過'
                 gameStatus.value = 2
             }
         }
 
-        if(answer.join('') === question.value){
+        if(answer.join('') === currentQuest.value.letter){
             checkString.value = '恭喜答對!!'
             gameStatus.value = 3
         }
@@ -80,7 +87,7 @@
 
     // 算方塊字數
     const cubeNumber = computed(()=>{
-        let num = Math.sqrt(mapimage.value.length)
+        let num = Math.sqrt(currentQuest.value.mapimg.length)
         return `grid-${num}`
         })
 
@@ -90,17 +97,42 @@
         }else{
             testNum.value +=1
         }
-        // gameStatus.value = 4
+        reset()
+    }
+
+    // 重新開始
+    const reset = function(){
+        checkString.value = ''
+        generateQarr()
+        gameStatus.value = 1
+        answer.length = 0
+    }
+
+    // 按鈕按下
+    const tab = function(cube:any){
+        // 按下後無法返回
+        if(cube.active){
+            return
+        }
+        // 遊戲結束(win(3) or lose(2))時無法輸入
+        if(gameStatus.value ==2){
+            return
+        }
+        cube.active = !cube.active
+        check(cube.letter)
     }
 </script>
 
 <template>
     <!-- 社團攤位圖 -->
     <div class="flex flex-col justify-center items-center">
-        <p class="font-bold mb-10 py-4 px-6 ring-[#e5ad55] ring-4 rounded-lg bg-white">{{ hint }}</p>
-        <p @click="changeQuestion()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer mb-2 font-bold">換題目</p>
+        <p class="font-bold mb-10 py-4 px-6 ring-[#e5ad55] ring-4 rounded-lg bg-white">{{ currentQuest.hint }}</p>
+        <div class="flex gap-2 mb-2">
+            <p @click="changeQuestion()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">換題目</p>
+            <p @click="reset()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">重新開始</p>
+        </div>
         <div :class="`grid gap-1 ${cubeNumber} w-full max-w-[40rem]`">
-            <minigameBtn :info="block" :gamestatus="gameStatus" v-for="(block,index) in Qarr" :key="`${block}${index}`" @tab="check"/>
+            <minigameBtn :info="cube.letter" :active="cube.active" :gamestatus="gameStatus"  v-for="(cube,index) in Qarr" :key="`${cube}${index}`" @click="tab(cube)"/>
         </div>
         <p class="mt-10 font-bold text-lg">{{ checkString }}</p>
     </div>

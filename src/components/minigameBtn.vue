@@ -1,43 +1,16 @@
 <script setup lang="ts">
-    import { ref,computed } from 'vue'
+    import { computed } from 'vue'
 
     const props = defineProps<{
         info: string,
+        active: boolean,
         gamestatus: number
      }>()
-    const emit = defineEmits<{(e: 'tab', value: string): void
-                            (e: 'gamestatusChange', value: number): void
-    }>()
-
-    // watch(() => props.gamestatus,
-    // (newVal) => {
-    //     if (newVal === 4) {
-    //     active.value = false
-    //     emit('gamestatusChange', 1) // 通知父元件同步
-    //     }
-    // }
-    // )
-
-    // 有無按下的狀態
-    let active = ref(false)
-
-    const tab = function(alphabet:string){
-        // 按下後無法返回
-        if(active.value){
-            return
-        }
-        // 遊戲結束(win(3) or lose(2))時無法輸入
-        if(props.gamestatus ==2){
-            return
-        }
-        active.value = !active.value
-        emit('tab', alphabet)
-    }
-
+     
     const bgColor = computed(() => {
         // 遊戲進行中
         if(props.gamestatus === 1){
-            if(active.value){
+            if(props.active){
                 return 'bg-[#30507a]'
             }else{
                 return 'bg-[#e5ad55]'
@@ -51,7 +24,7 @@
 </script>
 
 <template>
-    <div :class="`h-20 text-3xl cursor-pointer font-bold flex items-center justify-center text-white ${bgColor}`" @click="tab(info)">{{ info }}</div>
+    <div :class="`h-20 text-3xl cursor-pointer font-bold flex items-center justify-center text-white ${bgColor}`">{{ info }}</div>
 </template>
 
 <style scoped>
