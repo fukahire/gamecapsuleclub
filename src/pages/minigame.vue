@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import { ref,reactive,computed } from 'vue'
+    import hikariDialog from '../components/hikariDialog.vue'
     // 按鈕元件
     import minigameBtn from '../components/minigameBtn.vue'
     // 目前題目編號
@@ -135,6 +136,7 @@
             <minigameBtn :info="cube.letter" :active="cube.active" :gamestatus="gameStatus"  v-for="(cube,index) in Qarr" :key="`${cube}${index}`" @click="tab(cube)"/>
         </div>
         <p class="mt-10 font-bold text-lg">{{ checkString }}</p>
+        <hikariDialog/>
     </div>
 </template>
 
