@@ -61,6 +61,19 @@
       Qarr.value = arr
     }
 
+    const regeneraterQarr = () => {
+        let arr = []
+        for (let i = 0; i < Qarr.value.length; i++) {
+                let cubeSpace = {
+                    'letter': Qarr.value[i].letter,
+                    'active': false
+                }
+            arr.push(cubeSpace)
+        }
+          Qarr.value = arr
+
+    }
+
     // 初始化
     generateQarr()
 
@@ -98,13 +111,17 @@
         }else{
             testNum.value +=1
         }
-        reset()
+        
+        checkString.value = ''
+        generateQarr()
+        gameStatus.value = 1
+        answer.length = 0
     }
 
     // 重新開始
     const reset = function(){
         checkString.value = ''
-        generateQarr()
+        regeneraterQarr()
         gameStatus.value = 1
         answer.length = 0
     }
@@ -127,15 +144,18 @@
 <template>
     <!-- 社團攤位圖 -->
     <div class="flex flex-col justify-center items-center">
-        <p class="font-bold mb-10 py-4 px-6 ring-[#e5ad55] ring-4 rounded-lg bg-white">{{ currentQuest.hint }}</p>
-        <div class="flex gap-2 mb-2">
+        <div class="font-bold mb-4 w-full grid grid-cols-6 justify-center items-center h-[5rem] p-2 ring-[#e5ad55] ring-4 rounded-lg bg-white">
+            <div></div>
+            <p class="col-span-5">{{ currentQuest.hint }}</p>
+        </div>
+        <div class="flex gap-2 mb-8">
             <p @click="changeQuestion()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">換題目</p>
             <p @click="reset()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">重新開始</p>
         </div>
         <div :class="`grid gap-1 ${cubeNumber} w-full max-w-[40rem]`">
             <minigameBtn :info="cube.letter" :active="cube.active" :gamestatus="gameStatus"  v-for="(cube,index) in Qarr" :key="`${cube}${index}`" @click="tab(cube)"/>
         </div>
-        <p class="mt-10 font-bold text-lg">{{ checkString }}</p>
+        <p class="mt-4 mb-20 font-bold text-lg">{{ checkString }}</p>
         <hikariDialog/>
     </div>
 </template>
