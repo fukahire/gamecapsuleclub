@@ -4,7 +4,7 @@ import { ref, reactive, computed } from 'vue';
 const dialogStory = reactive([
     {
         netto: '聽說這遊戲有個小技巧喔!',
-        nettoface: '/chatimg/chat_01.png',
+        nettoface: 'chatimg/chat_01.png',
         rockman: '是什麼!',
         rockmanface: 'rockman-happy'
     },
