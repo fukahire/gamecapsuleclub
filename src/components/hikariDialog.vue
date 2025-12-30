@@ -4,25 +4,25 @@ import { ref, reactive, computed } from 'vue';
 const dialogStory = reactive([
     {
         netto: '聽說這遊戲有個小技巧喔!',
-        nettoface: 'src/assets/chatimg/chat_01.png',
+        nettoface: '/chatimg/chat_01.png',
         rockman: '是什麼!',
         rockmanface: 'rockman-happy'
     },
     {
         netto: '那就是!英文單字的頭跟尾會在最邊邊的格子!',
-        nettoface: 'src/assets/chatimg/chat_02.png',
+        nettoface: 'chatimg/chat_02.png',
         rockman: '熱斗好厲害!!',
         rockmanface: 'rockman-happy'
     },
     {
         netto: '',
-        nettoface: 'src/assets/chatimg/chat_03.png',
+        nettoface: 'chatimg/chat_03.png',
         rockman: '那你知道答案了嗎',
         rockmanface: 'rockman-happy'
     },
     {
         netto: '……英文我還是不會拼',
-        nettoface: 'src/assets/chatimg/chat_04.png',
+        nettoface: 'chatimg/chat_04.png',
         rockman: '如果上課沒有打瞌睡的話就不會這樣了……',
         rockmanface: 'rockman-happy'
     }
