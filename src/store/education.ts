@@ -105,8 +105,8 @@ export const useEducation = defineStore('education', {
                 painterURL: '',
                 index: 9,
             },{
-                img: 'education/naruhodo_ancient.png',
-                sprite: 'sprite/naruhodo_ancient.png',
+                img: 'education/naruhodo_acient.png',
+                sprite: 'sprite/naruhodo_acient.png',
                 name: '成步堂龍之介',
                 position: '保健室老師',
                 description: '主修英文，勇盟大學現役大學生。很有禮貌，但有點冒失。似乎總是在吃東西。因為幾乎不會生病所以被叫來當保健室老師。難道護理師證書跟律師證一樣是可以借來借去的嗎……？太糾結這種細節可是沒辦法玩逆轉裁判的！',
