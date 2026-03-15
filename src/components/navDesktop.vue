@@ -30,7 +30,7 @@
 
 <template>
     <div class="flex-row justify-between items-center px-4">
-        <a href="/"><img class="h-[2rem] pt-1" src="@/assets/logo.png" alt=""></a>
+        <a href="https://fukahire.github.io/gamecapsuleclub/"><img class="h-[2rem] pt-1" src="@/assets/logo.png" alt=""></a>
         <div class="flex gap-8">
             <router-link v-for="nav in navlink" :to="nav.link">{{ nav.title }}</router-link>
         </div>
