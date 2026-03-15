@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "minigame",
     component: () => import("../pages/minigame.vue"),
   },
+  {
+    path: "/game",
+    name: "game",
+    component: () => import("../pages/game.vue"),
+  },
 ];
 
 const router = createRouter({

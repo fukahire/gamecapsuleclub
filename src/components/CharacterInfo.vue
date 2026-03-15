@@ -8,6 +8,8 @@ type Info = {
   img: string
   description: string
   origin: string
+  painter: string
+  painterURL: string
 }
 
 defineProps<{ info: Info,
@@ -21,9 +23,8 @@ defineProps<{ info: Info,
 <template>
     <!-- 單張卡片 -->
      <div class="flex flex-col md:grid md:grid-cols-2 gap-4 items-center" v-if="positionIndex === info.index">
-        <div class="flex justify-center items-center"><img class="w-full max-w-[500px]" alt="" :src="info.img"></div>
+        <div class="flex justify-center items-center"><img class="h-full max-h-[450px]" alt="" :src="info.img"></div>
         <div class="flex flex-col justify-start gap-0.5 text-left">
-            <p></p>
             <div class="flex items-center gap-2 mb-1">
                 <!-- 角色縮圖 -->
                 <div><img class="w-8 mr-2" :src="info.sprite" alt=""></div>
@@ -37,6 +38,8 @@ defineProps<{ info: Info,
             <div class="pl-2 max-w-[450px] font-bold text-base md:text-lg">{{ info.description }}</div>
             <!-- 出場作品 -->
             <p class="pl-2 mt-5 font-bold">{{ `出場作品：《${info.origin}》` }}</p>
+            <a target="_blank" class="pl-2 max-w-[450px] font-bold text-base md:text-lg mt-12">{{ `繪師：${info.painter}` }}</a>
+
         </div>
      </div>
 </template>

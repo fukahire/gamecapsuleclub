@@ -6,9 +6,13 @@
                 title: '首頁',
                 link:'/'
             },
+            // {
+            //     title: '攤位資訊',
+            //     link:'/booth'
+            // },
             {
-                title: '攤位資訊',
-                link:'/booth'
+                title: '大會小遊戲',
+                link:'/game'
             },
             {
                 title: '學園風角色',

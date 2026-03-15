@@ -5,9 +5,13 @@
                 title: '首頁',
                 link:'/'
             },
+            // {
+            //     title: '攤位資訊',
+            //     link:'/booth'
+            // },
             {
-                title: '攤位資訊',
-                link:'/booth'
+                title: '大會小遊戲',
+                link:'/game'
             },
             {
                 title: '學園風角色',
@@ -25,8 +29,8 @@
 </script>
 
 <template>
-    <div class="flex-row justify-between px-4">
-        <div>test</div>
+    <div class="flex-row justify-between items-center px-4">
+        <a href="/"><img class="h-[2rem] pt-1" src="@/assets/logo.png" alt=""></a>
         <div class="flex gap-8">
             <router-link v-for="nav in navlink" :to="nav.link">{{ nav.title }}</router-link>
         </div>

@@ -29,7 +29,7 @@ const arrowRight = () => {
 <template>
     <div>
         <p class="text-2xl md:text-3xl font-black text-[#30507a] mb-2 drag-item">學園風角色</p>
-        <div class="justify-center flex gap-2 items-center">
+        <div class="justify-center flex gap-2 items-start md:items-center">
             <div @click="arrowLeft"><img class="w-12" src="@/assets/arrow-left.svg" alt=""></div>
             <div>
                 <character-info v-for="(item,index) in station" :key="index" :info="item" :positionIndex="positionIndex"></character-info>
