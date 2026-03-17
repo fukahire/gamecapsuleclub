@@ -87,7 +87,7 @@ export const useEducation = defineStore('education', {
             }, {
                 img: 'education/mitsurugi.png',
                 sprite: 'sprite/mitsurugi.png',
-                name: '御劍憐侍',
+                name: '御劍怜侍',
                 position: '辯論社客座',
                 description: '被戲劇社老師請來當辯論社客座。對於自己的想法總是很堅持、時常把學生瞪哭，但對於關心的人私底下很暖心。興趣是下西洋棋，偶爾會跟國文老師對弈。口頭禪是:下個月的社團分數等著瞧',                
                 origin: '逆轉檢事系列',
