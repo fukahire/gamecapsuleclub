@@ -23,7 +23,7 @@ defineProps<{ info: Info,
 <template>
     <!-- 單張卡片 -->
      <div class="flex flex-col md:grid md:grid-cols-2 gap-4 items-center" v-if="positionIndex === info.index">
-        <div class="flex justify-center items-center"><img class="h-full max-h-[450px]" alt="" :src="info.img"></div>
+        <div class="flex justify-center items-center"><img class="h-full max-h-[550px]" alt="" :src="info.img"></div>
         <div class="flex flex-col justify-start gap-0.5 text-left">
             <div class="flex items-center gap-2 mb-1">
                 <!-- 角色縮圖 -->
