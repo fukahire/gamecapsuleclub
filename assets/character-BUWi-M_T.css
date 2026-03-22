@@ -1,0 +1,1 @@
+@keyframes game-jump-d5714909{0%,30%,to{transform:translateY(0) scaleY(1);animation-timing-function:cubic-bezier(.8,0,1,1)}35%{transform:translateY(0) scaleY(.9)}65%{transform:translateY(-20px) scaleY(1.1);animation-timing-function:cubic-bezier(0,0,.2,1)}}.character[data-v-d5714909]{display:inline-block;animation:game-jump-d5714909 1.1s infinite}
