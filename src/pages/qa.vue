@@ -4,7 +4,7 @@
             <p class="text-2xl md:text-3xl font-black text-[#30507a] mb-2">常見問題</p>
             <div class="text-left">
                 <div class="mb-6">
-                    <p class="text-[#30507a] font-bold">Q：報名場內O社團有什麼條件呢？</p>
+                    <p class="text-[#30507a] font-bold">Q：欲報名該場內ONLY的社團有什麼條件呢？</p>
                     <p>A：攤位有一項以上<span class="bg-[#f1be33]">卡〇空</span>相關創作物。</p>
                 </div>
                 <div class="mb-6">

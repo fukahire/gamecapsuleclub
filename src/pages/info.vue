@@ -13,7 +13,7 @@
             <p>「NiCE創·迴響」遊戲主題場內Only</p>
             <p>2026.08.15（六）</p>
             <div class="flex flex-wrap gap-8 mt-8 h-12 justify-center items-ceters">
-                <div class="h-full"><a href="https://www.plurk.com/GameCapsuleClub" target="_blank"><img class="h-full block hover:rotate-45 rotate-0 transition border-[#e5ad55] border-2 rounded-full" src="../assets/social/fb.svg" alt=""></a></div>
+                <div class="h-full"><a href="https://www.facebook.com/profile.php?id=61582680582581" target="_blank"><img class="h-full block hover:rotate-45 rotate-0 transition border-[#e5ad55] border-2 rounded-full" src="../assets/social/fb.svg" alt=""></a></div>
                 <div class="h-full"><a href="https://www.plurk.com/GameCapsuleClub" target="_blank"><img class="h-full block hover:rotate-45 rotate-0 transition border-[#e5ad55] border-2 rounded-full" src="../assets/social/plurk.svg" alt=""></a></div>
                 <div class="h-full"><a href="https://x.com/GameCapsuleClub" target="_blank"><img class="h-full block hover:rotate-45 rotate-0 transition border-[#e5ad55] border-2 rounded-full" src="../assets/social/x.svg" alt=""></a></div>
             </div>
