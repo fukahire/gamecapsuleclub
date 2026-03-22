@@ -209,7 +209,7 @@ const currentHint = computed(()=>{
             <div class="relative"><img class="max-w-[5rem] absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" src="/chatimg/1230.png" alt=""></div>
             <p class="col-span-5">{{ currentHint.hint }}</p>
         </div>
-        <div class="flex justify-between gap-20 items-center mb-8">
+        <div class="flex justify-between flex-col gap-2 md:gap-0 md:flex-row w-full max-w-[40rem] items-center mb-8">
             <div class="flex gap-2">
                 <p @click="changeQuestion()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">{{ currentHint.changeQuest }}</p>
                 <p @click="reset()" class="bg-[#30507a] text-white p-2 rounded cursor-pointer font-bold">{{ currentHint.reStart }}</p>
