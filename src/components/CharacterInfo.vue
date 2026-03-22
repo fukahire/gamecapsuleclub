@@ -25,7 +25,7 @@ defineProps<{ info: Info,
      <div class="flex flex-col md:grid md:grid-cols-2 gap-4 items-center" v-if="positionIndex === info.index">
         <div class="flex justify-center items-center">
             <a :href="`https://fukahire.github.io/gamecapsuleclub/education/${info.img.split('/').pop()}`" target="_blank">
-                <img class="h-full max-h-[550px]" alt="" :src="info.img">
+                <img class="h-full max-h-[250px] md:max-h-[550px]" alt="" :src="info.img">
             </a>
         </div>
         <div class="flex flex-col justify-start gap-0.5 text-left">

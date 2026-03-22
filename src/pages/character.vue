@@ -33,10 +33,10 @@ const indexChange = (index: number) => {
 <template>
     <div>
         <p class="text-2xl md:text-3xl font-black text-[#30507a] mb-2 drag-item">學園風角色</p>
-        <div class="flex justify-center items-center divide-x divide-black/20 divide-x-3 mt-6 mb-8">
+        <div class="flex justify-center items-center divide-black/20 divide-x-3 mt-6 mb-8 flex-wrap">
             <div v-for="(item,index) in station" :key="`btn${index}`" @click="indexChange(index)" class="text-lg font-black text-[#30507a] relative cursor-pointer px-3">{{ item.name }}</div>
         </div>
-        <div class="justify-center flex gap-2 items-start md:items-center">
+        <div class="justify-center flex gap-2 items-center">
             <div @click="arrowLeft"><img class="w-12" src="@/assets/arrow-left.svg" alt=""></div>
             <div>
                 <character-info v-for="(item,index) in station" :key="index" :info="item" :positionIndex="positionIndex"></character-info>
