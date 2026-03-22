@@ -189,7 +189,7 @@ const changeQuestMap = ref([
 
 const currentHint = computed(()=>{
     const hint = currentQuest.value.hint
-    const lang = currentlang.value
+    const lang = currentlang.value as keyof typeof hint
     const reStart = reStartMap.value.find(item => item.id === lang)
     const changeQuest = changeQuestMap.value.find(item => item.id === lang)
     
